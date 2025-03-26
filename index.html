@@ -32,37 +32,40 @@
 
 </head>
 <body>
-
-    <header>
+   
+    
+        <header>
         <div class="header-content">
-            <button class="logout-button"> <span class="material-symbols-outlined">
+            <button class="logout-button" title="Botão de logout"> <span class="material-symbols-outlined">
                 reply
                 </span> </button>
                 
-                <div class="header-title">Texto Centralizado</div>
+                <div class="header-title">𝄞Sonora</div>
            
                 <div class="right-buttons">
-                <button class="settings-button"> <span class="material-symbols-outlined">
+                <button class="settings-button" title="Configurações"> <span class="material-symbols-outlined">
                     manufacturing
                     </span> </button>
-                <button class="user-button"> <span class="material-symbols-outlined">
+                <button class="user-button" title="Gestão do Usuário"> <span class="material-symbols-outlined">
                     person
                     </span> </button>
-                <button class="new-button"> <span class="material-symbols-outlined">
+                <button class="new-button" title="Sobre o Projeto"> <span class="material-symbols-outlined">
                     description
                     </span> </button> <!-- Novo botão adicionado -->
             </div>
         </div>
     </header>
 
+    <div class="musical-staff-background">
+
     <div class="module-container">
         <div class="module">
             <div class="card">
                 <div class="card-image">
-                    <img src="https://via.placeholder.com/300x180" alt="Imagem do cartão 1">
+                    <img src="https://via.placeholder.com/300x180" alt="Imagem Módulo 1">
                 </div>
                 <div class="card-text">
-                    <p><a href="#">Descrição do cartão 1</a></p>
+                    <p><a href="#">Notas e Acidentes</a></p>
                 </div>
                 <div class="actions">
                     <i class="fas fa-edit"></i>
@@ -71,10 +74,10 @@
             </div>
             <div class="card">
                 <div class="card-image">
-                    <img src="https://via.placeholder.com/300x180" alt="Imagem do cartão 2">
+                    <img src="https://via.placeholder.com/300x180" alt="Imagem Módulo 2">
                 </div>
                 <div class="card-text">
-                    <p><a href="#">Descrição do cartão 2</a></p>
+                    <p><a href="#">Notação simples</a></p>
                 </div>
                 <div class="actions">
                     <i class="fas fa-edit"></i>
@@ -83,10 +86,10 @@
             </div>
             <div class="card">
                 <div class="card-image">
-                    <img src="https://via.placeholder.com/300x180" alt="Imagem do cartão 3">
+                    <img src="https://via.placeholder.com/300x180" alt="Imagem Módulo 3">
                 </div>
                 <div class="card-text">
-                    <p><a href="#">Descrição do cartão 3</a></p>
+                    <p><a href="#">Compasso 1</a></p>
                 </div>
                 <div class="actions">
                     <i class="fas fa-edit"></i>
@@ -96,9 +99,11 @@
         </div>
     </div>
 
+</div>
+
     <footer>
         <div class="footer-button-container">
-            <button id="footerButton" onclick="toggleTextBox()"> <span class="material-symbols-outlined">
+            <button id="footerButton" onclick="toggleTextBox()" title="Conversar com Harmo!"> <span class="material-symbols-outlined">
                 chat
                 </span>  </button>
         </div>
@@ -107,6 +112,7 @@
     <div id="textBox" class="text-box">
         <p>Olá Mundo!</p>
     </div>
+
 
 
 </body>
