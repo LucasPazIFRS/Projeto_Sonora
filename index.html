@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=chat" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=reply" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=manufacturing" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=description" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    
+    <link rel="icon" href="">
+    
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 1,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        </style>
+
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <button class="logout-button"> <span class="material-symbols-outlined">
+                reply
+                </span> </button>
+                
+                <div class="header-title">Texto Centralizado</div>
+           
+                <div class="right-buttons">
+                <button class="settings-button"> <span class="material-symbols-outlined">
+                    manufacturing
+                    </span> </button>
+                <button class="user-button"> <span class="material-symbols-outlined">
+                    person
+                    </span> </button>
+                <button class="new-button"> <span class="material-symbols-outlined">
+                    description
+                    </span> </button> <!-- Novo botão adicionado -->
+            </div>
+        </div>
+    </header>
+
+    <div class="module-container">
+        <div class="module">
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://via.placeholder.com/300x180" alt="Imagem do cartão 1">
+                </div>
+                <div class="card-text">
+                    <p><a href="#">Descrição do cartão 1</a></p>
+                </div>
+                <div class="actions">
+                    <i class="fas fa-edit"></i>
+                    <i class="fas fa-trash"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://via.placeholder.com/300x180" alt="Imagem do cartão 2">
+                </div>
+                <div class="card-text">
+                    <p><a href="#">Descrição do cartão 2</a></p>
+                </div>
+                <div class="actions">
+                    <i class="fas fa-edit"></i>
+                    <i class="fas fa-trash"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://via.placeholder.com/300x180" alt="Imagem do cartão 3">
+                </div>
+                <div class="card-text">
+                    <p><a href="#">Descrição do cartão 3</a></p>
+                </div>
+                <div class="actions">
+                    <i class="fas fa-edit"></i>
+                    <i class="fas fa-trash"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-button-container">
+            <button id="footerButton" onclick="toggleTextBox()"> <span class="material-symbols-outlined">
+                chat
+                </span>  </button>
+        </div>
+    </footer>
+
+    <div id="textBox" class="text-box">
+        <p>Olá Mundo!</p>
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

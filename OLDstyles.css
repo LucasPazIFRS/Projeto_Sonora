@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f7f;
+}
+
+.module-container {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start; /* Desloca os módulos para a esquerda */
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.module {
+    display: flex;
+    gap: 20px;
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    animation: slideInCard 1s forwards;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-text {
+    margin-top: 15px;
+}
+
+.card-description {
+    font-size: 14px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.text-box {
+    display: none;
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Animações */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInCard {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Delay nos cartões */
+.module .card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.module .card:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.module .card:nth-child(3) {
+    animation-delay: 0.9s;
+}
