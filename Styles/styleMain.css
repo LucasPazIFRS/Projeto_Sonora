@@ -219,3 +219,67 @@
             background: inherit; /* Herda o estilo do fundo */
         }
         
+
+/* */
+/* */
+/* */
+
+
+.middle-buttons {
+    position: absolute;
+    top: 50%;
+    right: 1.5%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.icon-button {
+    font-size: 24px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #444;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.icon-button:hover {
+    background-color: #666;
+}
+
+.quick-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.quick-menu-button, .close-menu {
+    padding: 10px 15px;
+    border: none;
+    background-color: #444;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quick-menu-button:hover, .close-menu:hover {
+    background-color: #666;
+}
+
