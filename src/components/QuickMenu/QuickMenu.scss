@@ -1,0 +1,49 @@
+// src/components/QuickMenu/QuickMenu.scss
+.quick-menu-container {
+    position: fixed;
+    top: 50%;
+    left: 97%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .quick-menu-toggle {
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .quick-menu-toggle:hover {
+    background-color: #666;
+  }
+  
+  .quick-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .quick-menu-button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #444;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .quick-menu-button:hover {
+    background-color: #666;
+  }
+  
