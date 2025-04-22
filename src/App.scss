@@ -1,0 +1,22 @@
+/* src/App.scss */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.modules-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}

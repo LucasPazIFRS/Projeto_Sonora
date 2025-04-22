@@ -1,0 +1,31 @@
+// src/components/Footer/Footer.scss
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-button-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-button {
+    padding: 10px 20px;
+    background-color: #7000ba;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .footer-button:hover {
+    background-color: #4c0b77;
+  }
+  
