@@ -7,7 +7,9 @@
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
-  
+
+
+
   .header-buttons button,
   .header-right button {
     margin: 0 5px;
@@ -27,3 +29,15 @@
     color: #7000ba;
   }
   
+a{
+  text-decoration: none;
+}
+
+  h1:hover{
+    color: #5c0b92;
+  }
+
+ .header-button:hover{
+
+    background-color: #5c0b92;
+  }
