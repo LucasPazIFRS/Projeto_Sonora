@@ -17,6 +17,7 @@ import ExerciseHub from './pages/ExerciseHub';
 
 function App() {
   return (
+    
     <Router>
       <div className="app-container">
         <Header />
