@@ -13,12 +13,14 @@ export default function Header() {
         <button onClick={() => navigate(1)}>&gt;</button>
       </div>
       <div className="header-center">
+      <button onClick={() => navigate('/')}>
         <h1>𝄞Sonora</h1>
+        </button>
       </div>
       <div className="header-right">
         <button onClick={() => navigate('/profile')}>Perfil</button>
         <button onClick={() => navigate('/configs')}>Configs</button>
-        <button onClick={() => navigate('/docs')}>Docs</button>
+        <button onClick={() => navigate('/documentation')}>Docs</button>
       </div>
     </header>
   );
