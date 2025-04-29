@@ -8,6 +8,7 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    z-index: 999;
   }
   
   .quick-menu-toggle {
@@ -24,6 +25,7 @@
   }
   
   .quick-menu {
+    
     display: flex;
     flex-direction: column;
     gap: 10px;

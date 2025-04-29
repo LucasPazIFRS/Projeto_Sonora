@@ -1,0 +1,28 @@
+/*
+.modules-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* ou flex-start se quiser alinhados à esquerda 
+    margin-top: 20px;
+  }
+*/ 
+.modules-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+
+  &:has(.module-card:hover) .module-card:not(:hover) {
+    filter: brightness(0.7);
+    transform: scale(0.7);
+    transition: all 0.3s ease;
+  }
+
+  &:has(.module-card:hover) .module-card:hover {
+    transform: scale(1.10) scaleY(1.25); // mais alto
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+}
