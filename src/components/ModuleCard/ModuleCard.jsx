@@ -13,7 +13,7 @@ export default function ModuleCard({ title, image, link }) {
         <div className="card-text">
           <h3>{title}</h3>
           <Link to={link} className="card-link">
-            Ir para o Módulo
+            Ir para os exercícios
           </Link>
         </div>
       </div>
