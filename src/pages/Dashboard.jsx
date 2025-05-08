@@ -1,4 +1,3 @@
-// src/pages/Dashboard.jsx
 import React from 'react';
 import ModuleCard from '../components/ModuleCard/ModuleCard';
 import '../scss/DefaultStyles.scss';
@@ -12,11 +11,26 @@ const Dashboard = () => {
     <div className="dashboard-container">
       <h2>Dashboard</h2>
       <div className="modules-container">
-        {/* Só puxar tagzinha pra importar o componente*/}
-        <ModuleCard title="Notas e Acidentes" image={module1img} />
-        <ModuleCard title="Intervalos" image={module2img} />
-        <ModuleCard title="Escalas" image={module3img} />
-        <ModuleCard title="Acordes" image={module4img} />
+        <ModuleCard
+          title="Notas e Acidentes"
+          image={module1img}
+          link="/exercise-hub" // Pass the link prop
+        />
+        <ModuleCard
+          title="Intervalos"
+          image={module2img}
+          link="/exercise-hub" // Pass the link prop
+        />
+        <ModuleCard
+          title="Escalas"
+          image={module3img}
+          link="/exercise-hub" // Pass the link prop
+        />
+        <ModuleCard
+          title="Acordes"
+          image={module4img}
+          link="/exercise-hub" // Pass the link prop
+        />
       </div>
     </div>
   );

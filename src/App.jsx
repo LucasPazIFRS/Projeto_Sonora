@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Board from './components/Board/Board';
@@ -14,9 +13,10 @@ import Profile from './pages/Profile';
 import Documentation from './pages/Documentation';
 import Login from './pages/Login';
 import ExerciseHub from './pages/ExerciseHub';
+import NotesExercise from './pages/exercises/Notes';
+import GuessNoteExercise from './Exercises/GuessNoteExercise';
 
 function App() {
-  // ⬇️ Agora o useState está dentro do componente App ✅
   const [isBoardOpen, setIsBoardOpen] = useState(false);
 
   const handleOpenBoard = () => {
@@ -41,6 +41,8 @@ function App() {
             <Route path="/documentation" element={<Documentation />} />
             <Route path="/login" element={<Login />} />
             <Route path="/exercise-hub" element={<ExerciseHub />} />
+            <Route path="/exercises/notes" element={<NotesExercise />} />
+            <Route path="/exercises/guess-note" element={<GuessNoteExercise />} />
           </Routes>
         </div>
 
