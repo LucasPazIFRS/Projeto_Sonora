@@ -9,7 +9,7 @@ import module4img from '../Assets/moduleImages/module4.jpg';
 const Dashboard = () => {
   return (
     <div className="dashboard-container">
-      <h2>Dashboard</h2>
+      <h2>Menu Principal</h2>
       <div className="modules-container">
         <ModuleCard
           title="Notas e Acidentes"

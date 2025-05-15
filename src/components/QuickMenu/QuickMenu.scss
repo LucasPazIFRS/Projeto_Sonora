@@ -1,4 +1,5 @@
-// src/components/QuickMenu/QuickMenu.scss
+@use "../../scss/Colors.scss";
+
 .quick-menu-container {
     position: fixed;
     top: 50%;
@@ -13,7 +14,7 @@
   
   .quick-menu-toggle {
     padding: 10px 20px;
-    background-color: #444;
+    background-color: Colors.$cor-Principal;
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -21,7 +22,7 @@
   }
   
   .quick-menu-toggle:hover {
-    background-color: #666;
+    background-color: Colors.$cor-Contraste;
   }
   
   .quick-menu {
@@ -38,7 +39,7 @@
   .quick-menu-button {
     padding: 10px 15px;
     border: none;
-    background-color: #444;
+    background-color:  Colors.$cor-Principal;
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -46,6 +47,6 @@
   }
   
   .quick-menu-button:hover {
-    background-color: #666;
+    background-color: Colors.$cor-Contraste;
   }
   
