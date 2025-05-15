@@ -3,7 +3,7 @@ import ModuleCard from '../components/ModuleCard/ModuleCard';
 import '../scss/DefaultStyles.scss';
 import module1img from '../Assets/moduleImages/module1.jpg';
 import module2img from '../Assets/moduleImages/module2.jpg';
-import module3img from '../Assets/moduleImages/module3.webp';
+import module3img from '../Assets/moduleImages/module3.jpg';
 import module4img from '../Assets/moduleImages/module4.jpg';
 
 const Dashboard = () => {
