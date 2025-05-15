@@ -42,11 +42,27 @@ const Score = ({ notes }) => {
       duration: "q", // Quarter note duration
     });
 
+    // Add rest notes if the voice is incomplete
+    const totalBeats = 4; // Total beats in a 4/4 measure
+    const currentBeats = 1; // We are only rendering one note at a time
+    const missingBeats = totalBeats - currentBeats;
+
+    const vexNotes = [vexNote];
+    for (let i = 0; i < missingBeats; i++) {
+      vexNotes.push(
+        new StaveNote({
+          clef: "treble",
+          keys: ["b/4"], // Rest note
+          duration: "qr", // Quarter rest
+        })
+      );
+    }
+
     // Create a voice in 4/4
     const voice = new Voice({ num_beats: 4, beat_value: 4 });
-    voice.addTickables([vexNote]);
+    voice.addTickables(vexNotes);
 
-    // Format and justify the note to fit the stave
+    // Format and justify the notes to fit the stave
     const formatter = new Formatter().joinVoices([voice]).format([voice], 400);
 
     // Render the voice
