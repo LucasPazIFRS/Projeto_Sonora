@@ -51,7 +51,7 @@ function App() {
 
         <Board isVisible={isBoardOpen} onClose={handleCloseBoard}>
           <h2>Chat</h2>
-          <p>Bem-vindo ao chat! Em breve isso será funcional :)</p>
+          <p>Bem-vindo ao chat, este que em breve terá interação com os mascotes:)</p>
         </Board>
       </div>
     </Router>

@@ -14,22 +14,22 @@ const Dashboard = () => {
         <ModuleCard
           title="Notas e Acidentes"
           image={module1img}
-          link="/exercise-hub" // Pass the link prop
+          link="/exercise-hub" 
         />
         <ModuleCard
           title="Intervalos"
           image={module2img}
-          link="/exercise-hub" // Pass the link prop
+          link="/exercise-hub" 
         />
         <ModuleCard
           title="Escalas"
           image={module3img}
-          link="/exercise-hub" // Pass the link prop
+          link="/exercise-hub" 
         />
         <ModuleCard
           title="Acordes"
           image={module4img}
-          link="/exercise-hub" // Pass the link prop
+          link="/exercise-hub"
         />
       </div>
     </div>

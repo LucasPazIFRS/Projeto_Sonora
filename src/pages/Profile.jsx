@@ -7,7 +7,7 @@ const Profile = () => {
   const navigate = useNavigate();
   
   const handleLogout = () => {
-    navigate('/login'); // Redirect to the Login page
+    navigate('/login'); // Redireciona pro login
   };
   
   return (

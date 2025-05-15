@@ -30,6 +30,7 @@ const Login = () => {
           />
         </div>
         <div className="form-group">
+        
           <label htmlFor="password">Senha</label>
           <input
             type="password"
@@ -39,12 +40,15 @@ const Login = () => {
             placeholder="Digite sua senha"
             required
           />
+        
         </div>
-        <button type="submit" className="submit-button">
+         <button type="submit" className="submit-button">
           Entrar
-        </button>
+         </button>
+        <label ><a href="#hm">Esqueceu a senha?</a> </label>
       </form>
     </div>
+
   );
 };
 
