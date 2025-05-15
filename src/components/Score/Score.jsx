@@ -1,5 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import Vex from "vexflow";
+import {
+  Renderer,
+  Stave,
+  StaveNote,
+  Voice,
+  Formatter,
+} from "vexflow"; // Import required classes directly
 
 const Score = ({ notes }) => {
   const scoreRef = useRef(null);
@@ -7,40 +13,43 @@ const Score = ({ notes }) => {
   useEffect(() => {
     if (!notes || notes.length === 0) return;
 
-    // Limpa a notação anterior
+    // Clear the previous notation
     scoreRef.current.innerHTML = "";
 
-    // Inicializa o VexFlow
-    const VF = Vex.Flow;
-    const renderer = new VF.Renderer(scoreRef.current, VF.Renderer.Backends.SVG);
+    // Initialize VexFlow
+    const renderer = new Renderer(scoreRef.current, Renderer.Backends.SVG);
 
-    // Configura a render
+    // Configure the renderer
     renderer.resize(500, 200);
     const context = renderer.getContext();
     context.setFont("Arial", 10, "").setBackgroundFillStyle("#fff");
 
-    // Cria a pauta
-    const stave = new VF.Stave(10, 40, 400);
+    // Create the stave
+    const stave = new Stave(10, 40, 400);
     stave.addClef("treble").addTimeSignature("4/4");
     stave.setContext(context).draw();
 
-    // Converte as notas para o formato do VexFlow
-    const vexNotes = notes.map((note) => {
-      return new VF.StaveNote({
-        clef: "treble",
-        keys: [note.toLowerCase()], // Converte nota pra lowercase pro VexFlow
-        duration: "q", // Duração da nota (quarter note)
+    // Convert the last note to VexFlow format
+    const lastNote = notes[0]; // Get the most recent note
+    const formattedNote = lastNote
+      .replace(/([A-Ga-g])(#|b)?(\d)/, (_, pitch, accidental, octave) => {
+        return `${pitch.toLowerCase()}${accidental || ""}/${octave}`;
       });
+
+    const vexNote = new StaveNote({
+      clef: "treble",
+      keys: [formattedNote], // Use the correctly formatted note
+      duration: "q", // Quarter note duration
     });
 
-    // Cria uma voz em 4/4
-    const voice = new VF.Voice({ num_beats: 4, beat_value: 4 });
-    voice.addTickables(vexNotes);
+    // Create a voice in 4/4
+    const voice = new Voice({ num_beats: 4, beat_value: 4 });
+    voice.addTickables([vexNote]);
 
-    // Formata e inclui as notas na pauta
-    const formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
+    // Format and justify the note to fit the stave
+    const formatter = new Formatter().joinVoices([voice]).format([voice], 400);
 
-    // Renderiza a voz
+    // Render the voice
     voice.draw(context, stave);
   }, [notes]);
 

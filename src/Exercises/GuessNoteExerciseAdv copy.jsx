@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import * as Tone from 'tone';
-import Score from '../components/Score/Score'; // Import the Score component
 import './GuessNoteExerciseAdv.scss';
 
+// Define as notas nas ordens corretas
 const NOTES = [
   { note: 'C4', type: 'white' },
   { note: 'C#4', type: 'black' },
@@ -21,7 +21,6 @@ const NOTES = [
 const GuessNoteExerciseAdv = () => {
   const [targetNote, setTargetNote] = useState('');
   const [feedback, setFeedback] = useState('');
-  const [generatedNotes, setGeneratedNotes] = useState([]); // State to store generated notes
 
   useEffect(() => {
     generateNewNote();
@@ -30,7 +29,6 @@ const GuessNoteExerciseAdv = () => {
   const generateNewNote = async () => {
     const randomNote = NOTES[Math.floor(Math.random() * NOTES.length)].note;
     setTargetNote(randomNote);
-    setGeneratedNotes((prevNotes) => [...prevNotes, randomNote]); // Add the new note to the array
     const synth = new Tone.Synth().toDestination();
     await Tone.start();
     synth.triggerAttackRelease(randomNote, '1n');
@@ -49,23 +47,23 @@ const GuessNoteExerciseAdv = () => {
   };
 
   return (
+    
     <div className="guess-note-exercise">
-      <h2>Escute, clique e acerte!</h2>
-      {/* Render the Score component and pass the generated notes */}
-      <Score notes={generatedNotes} />
-      <div className="piano">
-        {NOTES.map(({ note, type }) => (
-          <button
-            key={note}
-            className={`key ${type === 'black' ? 'black-key' : 'white-key'}`}
-            onClick={() => handleNoteClick(note)}
-          >
-            {note}
-          </button>
-        ))}
-      </div>
-      <div className={`feedback ${feedback ? 'visible' : ''}`}>{feedback}</div>
-    </div>
+  <h2>Escute, clique e acerte!</h2>
+  <div className="piano">
+    {NOTES.map(({ note, type }) => (
+      <button
+        key={note}
+        className={`key ${type === 'black' ? 'black-key' : 'white-key'}`}
+        onClick={() => handleNoteClick(note)}
+      >
+        {note}
+      </button>
+    ))}
+  </div>
+  <div className={`feedback ${feedback ? 'visible' : ''}`}>{feedback}</div>
+</div>
+
   );
 };
 
