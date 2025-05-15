@@ -36,6 +36,7 @@ function App() {
         <div className="main-content">
           <Routes>
             <Route path="/" element={<Dashboard />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/configs" element={<Configs />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/documentation" element={<Documentation />} />
