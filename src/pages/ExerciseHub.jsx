@@ -7,7 +7,9 @@ const ExerciseHub = () => {
       <h2>Exercícios do Módulo</h2>
       <ul>
         <li>
-          <Link to="/exercises/notes">Notes Exercise</Link>
+          <Link to="/exercises/notes">Exercício Notas 1</Link>
+          <br />
+          <Link to="/exercises/notes2">Exercício Notas 2</Link>
         </li>
       </ul>
     </div>

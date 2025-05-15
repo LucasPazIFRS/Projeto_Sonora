@@ -10,7 +10,7 @@ export default function QuickMenu() {
   return (
     <div className="quick-menu-container">
       <button onClick={toggleMenu} className="quick-menu-toggle">
-        {isVisible ? 'Fechar Menu' : 'Abrir Menu'}
+        {isVisible ? 'X' : 'Abrir Menu'}
       </button>
 
       {isVisible && (

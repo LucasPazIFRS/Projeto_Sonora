@@ -35,9 +35,10 @@ const GuessNoteExercise = () => {
 
   return (
     <div className="guess-note-exercise">
-      <h2>Adivinhe a Nota</h2>
+      <h2>Escute clique e acerte!</h2>
       <div className="piano">
         {NOTES.map((note) => (
+        <div className="key-container">  
           <button
             key={note}
             className="key"
@@ -45,6 +46,7 @@ const GuessNoteExercise = () => {
           >
             {note}
           </button>
+          </div> 
         ))}
       </div>
       <div className="feedback">{feedback}</div>

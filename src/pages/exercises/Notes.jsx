@@ -4,7 +4,7 @@ import GuessNoteExercise from "../../Exercises/GuessNoteExercise";
 const Notes = () => {
   return (
     <div>
-      <h2>Exercícios do Módulo</h2>
+      <h2>M1x1</h2>
       <GuessNoteExercise />
     </div>
   );

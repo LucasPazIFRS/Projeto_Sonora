@@ -14,7 +14,9 @@ import Documentation from './pages/Documentation';
 import Login from './pages/Login';
 import ExerciseHub from './pages/ExerciseHub';
 import NotesExercise from './pages/exercises/Notes';
+import Notes2 from './pages/exercises/Notes2';
 import GuessNoteExercise from './Exercises/GuessNoteExercise';
+import GuessNoteExerciseAdv from './Exercises/GuessNoteExerciseAdv';
 
 function App() {
   const [isBoardOpen, setIsBoardOpen] = useState(false);
@@ -44,6 +46,7 @@ function App() {
             <Route path="/exercise-hub" element={<ExerciseHub />} />
             <Route path="/exercises/notes" element={<NotesExercise />} />
             <Route path="/exercises/guess-note" element={<GuessNoteExercise />} />
+            <Route path="/exercises/notes2" element={<Notes2 />} />
           </Routes>
         </div>
 
