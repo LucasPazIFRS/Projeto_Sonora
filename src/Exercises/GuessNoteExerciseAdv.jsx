@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import * as Tone from 'tone';
-import Score from '../components/Score/Score'; // Import the Score component
+import Score from '../components/Score/Score'; 
 import './GuessNoteExerciseAdv.scss';
 
 
@@ -22,16 +22,15 @@ const NOTES = [
 const GuessNoteExerciseAdv = () => {
   const [targetNote, setTargetNote] = useState('');
   const [feedback, setFeedback] = useState('');
-  const [generatedNotes, setGeneratedNotes] = useState([]); // State to store the most recent note
-
+  const [generatedNotes, setGeneratedNotes] = useState([]); // guardar as notas geradas
   useEffect(() => {
-    generateNewNote(); // Call only once on mount
+    generateNewNote(); // chama uma nota só ao gerar
   }, []);
 
   const generateNewNote = async () => {
     const randomNote = NOTES[Math.floor(Math.random() * NOTES.length)].note;
     setTargetNote(randomNote);
-    setGeneratedNotes([randomNote]); // Replace the array with only the new note
+    setGeneratedNotes([randomNote]); // Repõe um array com notas
     const synth = new Tone.Synth().toDestination();
     await Tone.start();
     synth.triggerAttackRelease(randomNote, '1n');
@@ -51,8 +50,7 @@ const GuessNoteExerciseAdv = () => {
 
   return (
     <div className="guess-note-exercise">
-      <h2>Escute, clique e acerte!  </h2>
-      <img src="src/Assets/moduleimages/lmao.png" />  
+      <h2>Escute, clique e acerte!  </h2> 
       <div className="score-container">
         <Score notes={generatedNotes} />
       </div>

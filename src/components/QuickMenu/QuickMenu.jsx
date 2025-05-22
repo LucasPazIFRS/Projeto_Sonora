@@ -15,9 +15,9 @@ export default function QuickMenu() {
 
       {isVisible && (
         <div className="quick-menu">
-          <button className="quick-menu-button">Configurações</button>
-          <button className="quick-menu-button">Perfil</button>
-          <button className="quick-menu-button">Ajuda</button>
+          <button className="quick-menu-button">Função 1</button>
+          <button className="quick-menu-button">Função 2</button>
+          <button className="quick-menu-button">Função 3</button>
         </div>
       )}
     </div>
