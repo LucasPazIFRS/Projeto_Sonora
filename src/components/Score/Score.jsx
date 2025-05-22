@@ -5,6 +5,7 @@ import {
   StaveNote,
   Voice,
   Formatter,
+  Accidental,
 } from "vexflow"; // Import required classes directly
 
 const Score = ({ notes }) => {
@@ -12,6 +13,8 @@ const Score = ({ notes }) => {
 
   useEffect(() => {
     if (!notes || notes.length === 0) return;
+
+    console.log("Notes passed to Score:", notes); // Debugging log
 
     // Clear the previous notation
     scoreRef.current.innerHTML = "";
@@ -31,16 +34,23 @@ const Score = ({ notes }) => {
 
     // Convert the last note to VexFlow format
     const lastNote = notes[0]; // Get the most recent note
-    const formattedNote = lastNote
-      .replace(/([A-Ga-g])(#|b)?(\d)/, (_, pitch, accidental, octave) => {
-        return `${pitch.toLowerCase()}${accidental || ""}/${octave}`;
-      });
+    const match = lastNote.match(/([A-Ga-g])(#|b)?(\d)/); // Match pitch, accidental, and octave
+    if (!match) return;
 
+    const [_, pitch, accidental, octave] = match; // Destructure the matched groups
+    const formattedNote = `${pitch.toLowerCase()}/${octave}`; // Format the note for VexFlow
+
+    // Create the StaveNote
     const vexNote = new StaveNote({
       clef: "treble",
       keys: [formattedNote], // Use the correctly formatted note
       duration: "q", // Quarter note duration
     });
+
+    // Add accidental if present
+    if (accidental) {
+      vexNote.addModifier(new Accidental(accidental), 0); // Correctly add the accidental
+    }
 
     // Add rest notes if the voice is incomplete
     const totalBeats = 4; // Total beats in a 4/4 measure
@@ -67,7 +77,7 @@ const Score = ({ notes }) => {
 
     // Render the voice
     voice.draw(context, stave);
-  }, [notes]);
+  }, [notes]); // Ensure useEffect runs when `notes` changes
 
   return <div ref={scoreRef}></div>;
 };

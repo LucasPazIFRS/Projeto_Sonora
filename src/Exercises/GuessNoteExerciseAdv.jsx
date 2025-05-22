@@ -3,6 +3,7 @@ import * as Tone from 'tone';
 import Score from '../components/Score/Score'; // Import the Score component
 import './GuessNoteExerciseAdv.scss';
 
+
 const NOTES = [
   { note: 'C4', type: 'white' },
   { note: 'C#4', type: 'black' },
@@ -21,16 +22,16 @@ const NOTES = [
 const GuessNoteExerciseAdv = () => {
   const [targetNote, setTargetNote] = useState('');
   const [feedback, setFeedback] = useState('');
-  const [generatedNotes, setGeneratedNotes] = useState([]); // State to store generated notes
+  const [generatedNotes, setGeneratedNotes] = useState([]); // State to store the most recent note
 
   useEffect(() => {
-    generateNewNote();
+    generateNewNote(); // Call only once on mount
   }, []);
 
   const generateNewNote = async () => {
     const randomNote = NOTES[Math.floor(Math.random() * NOTES.length)].note;
     setTargetNote(randomNote);
-    setGeneratedNotes((prevNotes) => [...prevNotes, randomNote]); // Add the new note to the array
+    setGeneratedNotes([randomNote]); // Replace the array with only the new note
     const synth = new Tone.Synth().toDestination();
     await Tone.start();
     synth.triggerAttackRelease(randomNote, '1n');
@@ -50,9 +51,11 @@ const GuessNoteExerciseAdv = () => {
 
   return (
     <div className="guess-note-exercise">
-      <h2>Escute, clique e acerte!</h2>
-      {/* Render the Score component and pass the generated notes */}
-      <Score notes={generatedNotes} />
+      <h2>Escute, clique e acerte!  </h2>
+      <img src="src/Assets/moduleimages/lmao.png" />  
+      <div className="score-container">
+        <Score notes={generatedNotes} />
+      </div>
       <div className="piano">
         {NOTES.map(({ note, type }) => (
           <button
