@@ -11,10 +11,11 @@ export default function ExLinker({ logo, route, title }) {
         className="ex-linker-button"
         onClick={() => navigate(route)}
       >
-        <img src={logo} alt="Logo" className="ex-linker-logo" />
+        <img src={logo} alt="Logo" className="ex-linker-logo" title = "Clique para ir ao exercício" />
       </button>
       <span
         className="ex-linker-title"
+        title = "Clique para ir ao exercício"
         onClick={() => navigate(route)}
       >
         {title}

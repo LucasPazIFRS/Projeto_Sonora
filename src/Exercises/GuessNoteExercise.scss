@@ -1,115 +1,80 @@
 $bg-color: #f0f0f0;
 
-.piano {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  align-items: center;
+.key-container {
+  flex: 0 0 auto; /* Prevent keys from stretching */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default paddings */
 }
 
-.key {
-  width: 75px;
-  height: 100px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  position: relative; 
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding: 0 0 5px 5px;
-  color: #333;
-}
-
-.white-key {
-  background-color: #fff;
-  color: #333;
-}
-
-.black-key {
-  background-color: #333;
-  color: #fff;
-  width: 50px; 
-  height: 75px; 
-  margin-top: 25px; 
-  z-index: 2; 
-}
-
-.key:hover {
-  background-color: darken($bg-color, 10%);
-}
-
-.black-key:hover {
-  background-color: #555;
-}
-
-.feedback {
-  position: fixed; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
-  font-size: 3rem; 
-  font-weight: bold; 
-  color: #333; 
-  background-color: rgba(255, 255, 255, 0.8); 
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-  text-align: center; 
-  z-index: 1000; 
-  display: none; 
-}
-
-.feedback.visible {
-  display: block; /* mostra quando feedback ta ativo*/
-}
-
-.guess-note-container {
+.guess-note-exercise {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
-  gap: 2rem;
+  justify-content: space-between; /* Distribute elements evenly */
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  overflow: hidden; /* Prevent scrolling */
 
-  h2 {
-    font-size: 2rem;
-    color: #333;
+  h5 {
+    font-size: 2.5rem; /* Larger title */
+    margin: 20px 0;
   }
 
-  .note-buttons {
+  .score-container {
+    width: 100%; /* Full width */
+    max-width: 800px; /* Limit the maximum width */
+    margin: 0 auto; /* Center horizontally */
+    svg {
+      width: 100%; /* Make the stave responsive */
+      height: auto;
+    }
+  }
+
+  .piano {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
     justify-content: center;
+    gap: 2px; /* Ensure the gap is applied */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    width: 100%; /* Full width */
+    max-width: 800px; /* Limit the maximum width */
+    padding: 0; /* Remove any padding */
+    box-sizing: border-box; /* Include padding and border in width/height calculations */
+  }
+  
+  .key-container {
+    flex: 0 0 auto; /* Prevent keys from stretching */
+    margin: 0; /* Remove default margins */
+  }
 
-    button {
-      padding: 1rem 1.5rem;
-      font-size: 1.2rem;
-      background-color: $bg-color;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
+.key {
+  width: 120px; /* Fixed width for keys */
+  height: 300px; /* Larger keys */
+  font-size: 1.2rem; /* Larger text */
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
 
-      &:hover {
-        background-color: #e0e0e0;
-      }
+  &:hover {
+    background-color: #ddd;
+  }
+}
 
-      &.correct {
-        background-color: #d4edda;
-        border-color: #28a745;
-        color: #155724;
-      }
+  .feedback {
+    font-size: 2.5rem; /* Larger feedback text */
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 
-      &.incorrect {
-        background-color: #f8d7da;
-        border-color: #dc3545;
-        color: #721c24;
-      }
+    &.visible {
+      visibility: visible;
+      opacity: 1;
     }
   }
 }

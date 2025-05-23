@@ -8,8 +8,8 @@ const ExerciseHub = () => {
     <div>
       <h2>Exercícios do Módulo</h2>
       
-      <ExLinker logo={notesLogo} route="/exercises/notes" title="Notas 1" />
-      <ExLinker logo={notes2Logo} route="/exercises/notes2" title="Notas 2" />
+      <ExLinker logo={notesLogo} route="/exercises/notes" title="Notas Simples" />
+      <ExLinker logo={notes2Logo} route="/exercises/notes2" title="Notas Avançado" />
     </div>
   );
 };
