@@ -6,7 +6,10 @@ const Documentation = () => {
     <div>
 
       <h2>Documentação</h2>
-      <p>Aqui está a documentação do sistema.</p>
+      <h3>Aqui está a documentação do sistema.</h3>
+      
+      <a href="https://github.com/LucasPazIFRS/Projeto_Sonora">Github do projeto :)</a>
+    
     
     </div>
   );

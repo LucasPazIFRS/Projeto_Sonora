@@ -1,17 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import ExLinker from '../components/ExLinker/ExLinker.jsx';
+import notesLogo from '../Assets/logos/logo_x1.jpg';
+import notes2Logo from '../Assets/logos/logo_x2.jpg';
 
 const ExerciseHub = () => {
   return (
     <div>
       <h2>Exercícios do Módulo</h2>
-      <ul>
-        <li>
-          <Link to="/exercises/notes">Exercício Notas 1</Link>
-          <br />
-          <Link to="/exercises/notes2">Exercício Notas 2</Link>
-        </li>
-      </ul>
+      
+      <ExLinker logo={notesLogo} route="/exercises/notes" title="Notas 1" />
+      <ExLinker logo={notes2Logo} route="/exercises/notes2" title="Notas 2" />
     </div>
   );
 };
