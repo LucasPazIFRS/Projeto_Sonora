@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Board from './components/Board/Board';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import QuickMenu from './components/QuickMenu/QuickMenu';
-import ModuleCard from './components/ModuleCard/ModuleCard';
+import Emitter from './components/Emitter/Emitter';
 import './App.scss';
 
 import Dashboard from './pages/Dashboard';
@@ -20,6 +20,7 @@ import GuessNoteExerciseAdv from './Exercises/GuessNoteExerciseAdv';
 
 function App() {
   const [isBoardOpen, setIsBoardOpen] = useState(false);
+  const location = useLocation(); // Hook para obter a rota atual
 
   const handleOpenBoard = () => {
     setIsBoardOpen(true);
@@ -29,35 +30,38 @@ function App() {
     setIsBoardOpen(false);
   };
 
+  // Verifica se a rota atual é "/login"
+  const isLoginPage = location.pathname === '/login';
+
   return (
-    <Router>
-      <div className="app-container">
-        <Header />
-        <QuickMenu />
+    <div className="app-container">
+      {!isLoginPage && <Emitter />}
+      {!isLoginPage && <Header />}
+      {!isLoginPage && <QuickMenu />}
 
-        <div className="main-content">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/configs" element={<Configs />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/documentation" element={<Documentation />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/exercise-hub" element={<ExerciseHub />} />
-            <Route path="/exercises/notes" element={<NotesExercise />} />
-            <Route path="/exercises/guess-note" element={<GuessNoteExercise />} />
-            <Route path="/exercises/notes2" element={<Notes2 />} />
-          </Routes>
-        </div>
-
-        <Footer onChatClick={handleOpenBoard} />
-
-        <Board isVisible={isBoardOpen} onClose={handleCloseBoard}>
-          <h2>Chat</h2>
-          <p>Bem-vindo ao chat, este que em breve terá interação com os mascotes:)</p>
-        </Board>
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/configs" element={<Configs />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/documentation" element={<Documentation />} />
+          <Route path="/exercise-hub" element={<ExerciseHub />} />
+          <Route path="/exercises/notes" element={<NotesExercise />} />
+          <Route path="/exercises/guess-note" element={<GuessNoteExercise />} />
+          <Route path="/exercises/notes2" element={<Notes2 />} />
+        </Routes>
       </div>
-    </Router>
+
+      {!isLoginPage && (
+        <Footer onChatClick={handleOpenBoard} />
+      )}
+
+      <Board isVisible={isBoardOpen} onClose={handleCloseBoard}>
+        <h2>Chat</h2>
+        <p>Bem-vindo ao chat, este que em breve terá interação com os mascotes:)</p>
+      </Board>
+    </div>
   );
 }
 
