@@ -6,10 +6,11 @@ import AgentBoard from "../components/AgentBoard/AgentBoard.jsx";
 import RoundButton from "../components/RoundButton/RoundButton.jsx";
 import Agent from "../components/Agent/Agent.jsx";
 import "../pages/pagesScss/ExerciseHub.scss";
+import AgentFloat from "../components/AgentFloat/AgentFloat.jsx";
 
 const ExerciseHub = () => {
   const messages = [
-    "Bem-vindo ao módulo de exercícios!",
+    "Bem-vindo ao módulo de exercícios de notas musicais!",
     "Aqui você pode praticar suas habilidades musicais.",
     "Escolha um exercício para começar!",
     "Boa sorte e divirta-se aprendendo música!",
@@ -23,6 +24,7 @@ const ExerciseHub = () => {
 
   return (
     <div className="exercise-hub">
+      
       <h2>Exercícios do Módulo</h2>
       <div className="button-container">
         <RoundButton>

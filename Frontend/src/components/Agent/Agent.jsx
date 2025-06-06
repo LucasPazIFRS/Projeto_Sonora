@@ -9,9 +9,12 @@ const Agent = ({ isSpeaking }) => {
     <div className="agent">
       <img
         src={isSpeaking ? speakingGif : waitingImage}
-        alt={isSpeaking ? "Agente falando" : "Agente esperando"}
+        alt={isSpeaking ? "" : ""} //Agente falando" : "Agente esperando"
         className="agent-image"
       />
+      <p className="agent-status">
+        {isSpeaking ? "😀" : "🙂"} {/* Renderiza as carinhas diretamente */}
+      </p>
     </div>
   );
 };

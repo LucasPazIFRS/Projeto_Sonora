@@ -1,0 +1,37 @@
+/* filepath: /home/all/Área de Trabalho/Sonora Dev/Projeto_Sonora/Frontend/src/components/AgentFloat/AgentFloat.scss */
+
+.agent-float {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Garante que a imagem não ultrapasse os limites */
+  }
+  
+  .floating-image {
+    position: absolute;
+    width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
+    animation: float 5s infinite ease-in-out, move-up-down 3s infinite ease-in-out;
+  }
+  
+  /* Animação para mover de um lado ao outro */
+  @keyframes float {
+    0% {
+      left: 0;
+    }
+    50% {
+      left: 50%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  /* Animação para mover levemente para cima e para baixo */
+  @keyframes move-up-down {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
