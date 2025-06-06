@@ -1,0 +1,18 @@
+.agent {
+    width: 150px; /* Tamanho do quadrado */
+    height: 150px;
+    background: #ffffff;
+    border: 2px solid #ba0064;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse o quadrado */
+  }
+  
+  .agent-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta o GIF ou imagem ao tamanho do quadrado */
+  }

@@ -12,6 +12,7 @@ const Emitter = () => {
         id: Date.now(),
         symbol: symbols[Math.floor(Math.random() * symbols.length)],
         left: Math.random() * 100, // posição horizontal aleatória
+        size: Math.random() * 3 + 1, //tamanho aleatório
       };
       setFallingSymbols((prev) => [...prev, newSymbol]);
 
@@ -28,7 +29,10 @@ const Emitter = () => {
         <span
           key={item.id}
           className="falling-symbol"
-          style={{ left: `${item.left}%` }}
+          style={{ left: `${item.left}%` ,
+          fontSize: `${item.size}rem`,
+        
+        }}
         >
           {item.symbol}
         </span>

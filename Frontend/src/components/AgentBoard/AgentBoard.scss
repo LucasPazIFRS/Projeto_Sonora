@@ -1,0 +1,69 @@
+/* filepath: /home/all/Área de Trabalho/Sonora Dev/Projeto_Sonora/Frontend/src/components/AgentBoard/AgentBoard.scss */
+
+.agent-board {
+    position: absolute; /* Permite posicionamento em relação ao contêiner pai */
+    top: 50%; /* Posiciona no meio verticalmente */
+    right: 100px; /* Ajusta a posição à direita, antes do QuickMenu */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    width: 300px; /* Largura fixa */
+    max-width: 90%; /* Responsivo para telas menores */
+    height: 400px; /* Altura fixa */
+    background: #ffffff;
+    border: 2px solid #ba0064;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    z-index: 1000; /* Certifique-se de que está acima de outros elementos */
+  }
+  
+  .message-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .message {
+    font-size: 1.2rem;
+    color: #333;
+    animation: fade-in 0.5s ease-in-out;
+  }
+  
+  .waiting-animation {
+    font-size: 1.5rem;
+    color: #ba0064;
+    font-weight: bold;
+    animation: fade-in 0.5s ease-in-out;
+  }
+  
+  .next-button {
+    background: #ba0064;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    align-self: center;
+    transition: background 0.3s ease;
+  }
+  
+  .next-button:hover {
+    background: #d63384;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

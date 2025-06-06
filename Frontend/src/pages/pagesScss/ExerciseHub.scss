@@ -1,0 +1,29 @@
+.exercise-hub {
+    padding: 20px; /* Adiciona um espaçamento interno */
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-start; /* Alinha o botão à esquerda */
+    margin: 20px 0; /* Espaçamento entre o botão e os outros elementos */
+    position: relative; /* Garante que o botão não seja coberto por outros elementos */
+    z-index: 1; /* Eleva o botão acima de outros elementos */
+  }
+  
+  .exlinker-container {
+    display: flex;
+    flex-direction: column; /* Organiza os botões verticalmente */
+    align-items: flex-start; /* Alinha os botões à esquerda */
+    gap: 20px; /* Espaçamento entre os botões */
+  }
+
+
+  .agent-board-container {
+    display: flex; /* Usa flexbox para alinhar os elementos horizontalmente */
+    align-items: center; /* Alinha verticalmente o Agent e o AgentBoard */
+    justify-content: flex-end; /* Posiciona o Agent e o AgentBoard à direita */
+    gap: 10px; /* Espaçamento entre o Agent e o AgentBoard */
+    position: relative; /* Garante que o layout seja relativo ao contêiner pai */
+    margin-right: 5vw;
+    margin-top: -35vh; /* Move o AgentBoard mais para cima */
+  }
