@@ -3,7 +3,6 @@ import * as Tone from 'tone';
 import Score from '../components/Score/Score'; 
 import './GuessNoteExerciseAdv.scss';
 
-
 const NOTES = [
   { note: 'C4', type: 'white' },
   { note: 'C#4', type: 'black' },

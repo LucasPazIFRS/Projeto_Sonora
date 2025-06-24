@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import * as Tone from 'tone';
-import Score from '../components/Score/Score'; // Importa o componente Score
+import Score from '../components/Score/Score'; // Import the Score component
 import './GuessNoteExercise.scss';
 
-// Só notas brancas para o exercício simples
+// Only white keys (no accidentals)
 const NOTES = ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4'];
 
 const GuessNoteExercise = () => {
   const [targetNote, setTargetNote] = useState('');
   const [feedback, setFeedback] = useState('');
-  const [generatedNotes, setGeneratedNotes] = useState([]); // Estado para guardar as notas geradas recentemente
+  const [generatedNotes, setGeneratedNotes] = useState([]); // State to store the most recent note
+
   useEffect(() => {
-    generateNewNote(); // Gera a primeira nota ao montar o componente
+    generateNewNote(); // Generate the first note on mount
   }, []);
 
   const generateNewNote = async () => {
     const randomNote = NOTES[Math.floor(Math.random() * NOTES.length)];
     setTargetNote(randomNote);
-    setGeneratedNotes([randomNote]); // Atualiza o estado com a nova nota gerada
-    // Inicia o sintetizador e toca a nota
+    setGeneratedNotes([randomNote]); // Update the generated notes for the Score component
     const synth = new Tone.Synth().toDestination();
     await Tone.start();
     synth.triggerAttackRelease(randomNote, '1n');
@@ -31,8 +31,8 @@ const GuessNoteExercise = () => {
       setFeedback(`❌ Errou! Era ${targetNote}`);
     }
     setTimeout(() => {
-      setFeedback(''); // Limpa o feedback após 2 segundos
-      generateNewNote(); // Gera nota nova
+      setFeedback(''); // Clear feedback after 2 seconds
+      generateNewNote(); // Generate a new note
     }, 2000);
   };
 
@@ -40,7 +40,7 @@ const GuessNoteExercise = () => {
     <div className="guess-note-exercise">
       <h5>Escute, clique e acerte!</h5>
       <div className="score-container">
-        <Score notes={generatedNotes} /> {/* Mostra a nota atual na partitura */}
+        <Score notes={generatedNotes} /> {/* Display the current note on the stave */}
       </div>
       <div className="piano">
         {NOTES.map((note) => (

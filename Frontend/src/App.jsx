@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import QuickMenu from './components/QuickMenu/QuickMenu';
 import Emitter from './components/Emitter/Emitter';
+import AgentFloat from './components/AgentFloat/AgentFloat';
 import './App.scss';
 
 import Dashboard from './pages/Dashboard';
@@ -17,6 +18,8 @@ import NotesExercise from './pages/exercises/Notes';
 import Notes2 from './pages/exercises/Notes2';
 import GuessNoteExercise from './Exercises/GuessNoteExercise';
 import GuessNoteExerciseAdv from './Exercises/GuessNoteExerciseAdv';
+
+import NyanCatImage from './Assets/fotodogato.jpg'; 
 
 function App() {
   const [isBoardOpen, setIsBoardOpen] = useState(false);
@@ -40,6 +43,9 @@ function App() {
       {!isLoginPage && <QuickMenu />}
 
       <div className="main-content">
+
+      <AgentFloat imageSrc={NyanCatImage} />
+
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
