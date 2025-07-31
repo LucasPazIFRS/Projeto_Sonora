@@ -43,9 +43,9 @@ function App() {
       {!isLoginPage && <QuickMenu />}
 
       <div className="main-content">
-
+{/*
       <AgentFloat imageSrc={NyanCatImage} />
-
+*/ }
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
