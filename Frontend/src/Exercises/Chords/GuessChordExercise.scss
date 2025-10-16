@@ -1,0 +1,63 @@
+/* filepath: /home/all/Área de Trabalho/Sonora Dev/Projeto_Sonora/Frontend/src/Exercises/Chords/GuessChordExercise.scss */
+
+.guess-chord-exercise {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .score-container {
+    margin: 20px auto;
+  }
+  
+  .chord-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .chord-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 2px solid #ba0064;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .chord-button:hover {
+    background-color: #ba0064;
+    color: #fff;
+  }
+  
+  .feedback {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #ba0064;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .feedback.visible {
+    opacity: 1;
+  }
+  
+  .mode-toggle {
+    margin-top: 20px;
+  }
+  
+  .mode-toggle button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 2px solid #ba0064;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .mode-toggle button.active {
+    background-color: #ba0064;
+    color: #fff;
+  }

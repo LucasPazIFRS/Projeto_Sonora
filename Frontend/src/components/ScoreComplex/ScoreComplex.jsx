@@ -5,92 +5,49 @@ import {
   StaveNote,
   Voice,
   Formatter,
-  Accidental,
 } from "vexflow";
-import "./ScoreComplex.scss";
 
-const ScoreComplex = ({ notes }) => {
-  const scoreRef = useRef(null);
+const ScoreComplex = ({ notes = [] }) => {
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    if (!notes || notes.length === 0) {
-      console.error("No notes provided to render.");
-      return;
-    }
+    if (!notes || notes.length === 0) return;
 
-    console.log("Notes passed to ScoreComplex:", notes); // Debug
+    // Limpa render anterior
+    containerRef.current.innerHTML = "";
 
-    // Limpa a partitura/notação passada
-    scoreRef.current.innerHTML = "";
-
-    // Inicializa o VexFlow
-    const renderer = new Renderer(scoreRef.current, Renderer.Backends.SVG);
-
-    // Renderer
-    renderer.resize(500, 200);
+    // Cria renderer e contexto
+    const renderer = new Renderer(containerRef.current, Renderer.Backends.SVG);
+    renderer.resize(300, 150);
     const context = renderer.getContext();
-    context.setFont("Arial", 10, "").setBackgroundFillStyle("#fff");
 
-    // Cria a Partitura
-    const stave = new Stave(10, 40, 400);
-    stave.addClef("treble").addTimeSignature("4/4");
-    stave.setContext(context).draw();
+    // Cria pauta
+    const stave = new Stave(10, 20, 280);
+    stave.addClef("treble").setContext(context).draw();
 
-    // Converte todas as notas para o formato VexFlow
-    const vexNotes = notes.map((note) => {
-      const match = note.match(/([A-Ga-g])(#|b)?(\d)/); // Garante que a oitava/acidente/pitch seja o mesmo do VexFlow
-      if (!match) return null;
+    // Converte notas tipo ["C4", "E4", "G4"] -> ["c/4", "e/4", "g/4"]
+    const formattedNotes = notes
+      .filter(Boolean)
+      .map((n) => n.replace(/(\d)/, "/$1").toLowerCase());
 
-      const [_, pitch, accidental, octave] = match; // Desestrutura os grupos
-      const formattedNote = `${pitch.toLowerCase()}/${octave}`; // Formata a nota recebida no Tone.js para VexFlow
+    // Cria uma nota de acorde/intervalo
+    const staveNote = new StaveNote({
+      keys: formattedNotes,
+      duration: "w", // semibreve — ocupa o compasso inteiro
+      clef: "treble",
+    });
 
-      // Cria StaveNote (Nota na partitura)
-      const vexNote = new StaveNote({
-        clef: "treble",
-        keys: [formattedNote], // Usa a nota formatada corretamente
-        duration: "q", // Quarter note
-      });
+    // Voice flexível (sem exigir batidas exatas)
+    const voice = new Voice({ num_beats: 4, beat_value: 4 });
+    voice.setStrict(false);
+    voice.addTickables([staveNote]);
 
-      // Adiciona o símbolo de acidentes
-      if (accidental) {
-        vexNote.addModifier(new Accidental(accidental), 0); // Acidentes
-      }
-
-      return vexNote;
-    }).filter((note) => note !== null); // Remove notas inválidas
-
-    // Verifica se há notas suficientes
-    if (vexNotes.length === 0) {
-      console.error("No valid notes to render.");
-      return;
-    }
-
-    // Adiciona notas de descanso para completar o número de batidas
-    const totalBeats = 4; // Número total de batidas em 4/4
-    const missingBeats = totalBeats - vexNotes.length;
-
-    for (let i = 0; i < missingBeats; i++) {
-      vexNotes.push(
-        new StaveNote({
-          clef: "treble",
-          keys: ["b/4"], // Nota de descanso
-          duration: "qr", // Quarter rest
-        })
-      );
-    }
-
-    // Voz dinâmica baseada no número de notas
-    const voice = new Voice({ num_beats: totalBeats, beat_value: 4 });
-    voice.addTickables(vexNotes);
-
-    // Formata e justifica notas na partitura
-    const formatter = new Formatter().joinVoices([voice]).format([voice], 400);
-
-    // Render na voz
+    // Formata e desenha
+    new Formatter().joinVoices([voice]).format([voice], 250);
     voice.draw(context, stave);
   }, [notes]);
 
-  return <div ref={scoreRef} className="score-complex"></div>;
+  return <div ref={containerRef}></div>;
 };
 
 export default ScoreComplex;
