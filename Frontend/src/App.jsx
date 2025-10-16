@@ -18,6 +18,7 @@ import NotesExercise from './pages/exercises/Notes';
 import Notes2 from './pages/exercises/Notes2';
 import GuessNoteExercise from './Exercises/GuessNoteExercise';
 import GuessNoteExerciseAdv from './Exercises/GuessNoteExerciseAdv';
+import Intervals from './pages/exercises/Intervals';
 
 import NyanCatImage from './Assets/fotodogato.jpg'; 
 
@@ -54,6 +55,7 @@ function App() {
           <Route path="/documentation" element={<Documentation />} />
           <Route path="/exercise-hub" element={<ExerciseHub />} />
           <Route path="/exercises/notes" element={<NotesExercise />} />
+          <Route path="/exercises/intervals" element={<Intervals />} />
           <Route path="/exercises/guess-note" element={<GuessNoteExercise />} />
           <Route path="/exercises/notes2" element={<Notes2 />} />
         </Routes>
@@ -65,7 +67,7 @@ function App() {
 
       <Board isVisible={isBoardOpen} onClose={handleCloseBoard}>
         <h2>Chat</h2>
-        <p>Bem-vindo ao chat, este que em breve terá interação com os mascotes:)</p>
+        <p>Plataforma Sonora, desenvolvida por Lucas Martins |IFRS|DS4|2025|</p>
       </Board>
     </div>
   );
