@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as Tone from "tone";
-import ScoreComplex from "./ScoreComplex";
-import { NOTES, generateModes } from "../../components/ScaleUtils/ScaleUtils";
+import ScoreComplex from "../../components/ScoreComplex/ScoreComplex";
+import { NOTES, generateModes } from "./ScaleUtils";
 
 const ScaleExerciseAdvanced = () => {
   const root = NOTES[Math.floor(Math.random() * NOTES.length)];

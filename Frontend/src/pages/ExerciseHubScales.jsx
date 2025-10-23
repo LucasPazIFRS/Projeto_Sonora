@@ -41,7 +41,7 @@ const ExerciseHubScales = () => {
       <div className="exlinker-container">
         <ExLinker
           logo={simpleLogo}
-          route="/exercises/scale/simple"
+          route="/exercises/scalessim"
           title="Escalas Simples"
         />
 
@@ -59,7 +59,7 @@ const ExerciseHubScales = () => {
 
         <ExLinker
           logo={advancedLogo}
-          route="/exercises/scale/advanced"
+          route="/exercises/scalesadv"
           title="Escalas Avançadas"
         />
 
@@ -76,7 +76,7 @@ const ExerciseHubScales = () => {
 
         <ExLinker
           logo={variationLogo}
-          route="/exercises/scale/variation"
+          route="/exercises/scalesvar"
           title="Escalas com Nota Errada"
         />
       </div>

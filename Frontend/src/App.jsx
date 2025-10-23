@@ -20,10 +20,14 @@ import GuessNoteExercise from './Exercises/GuessNoteExercise';
 import GuessNoteExerciseAdv from './Exercises/GuessNoteExerciseAdv';
 import Intervals from './pages/exercises/Intervals';
 import Chords from './pages/exercises/Chords';
+import ScaleExerciseSimples from './Exercises/Scales/ScalesSimple';
+import ScaleExerciseAdvanced from './Exercises/Scales/ScalesAdv';
+import ScaleExerciseVariation from './Exercises/Scales/ScalesVar';
 import ChordBuilder from './pages/exercises/ChordBuilder'
 import ExerciseHubChords from './pages/ExerciseHubChords';
 import ExerciseHubIntervalos from './pages/ExerciseHubIntervalos';
 import ExerciseHubScales from './pages/ExerciseHubScales';
+
 
 import NyanCatImage from './Assets/fotodogato.jpg'; 
 
@@ -63,6 +67,9 @@ function App() {
           <Route path="/exercises/intervals" element={<Intervals />} />
           <Route path="/exercises/chords" element={<Chords />} />
           <Route path="/exercises/chordbuilder" element={<ChordBuilder />} />
+          <Route path="/exercises/scalessim" element={<ScaleExerciseSimples/>} />
+          <Route path="/exercises/scalesadv" element={<ScaleExerciseAdvanced />} />
+          <Route path="/exercises/scalesvar" element={<ScaleExerciseVariation />} />
           <Route path="/exercises/guess-note" element={<GuessNoteExercise />} />
           <Route path="/exercises/notes2" element={<Notes2 />} />
           <Route path="/exercise-hubChords" element={<ExerciseHubChords />} />

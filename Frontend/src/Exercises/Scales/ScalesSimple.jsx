@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as Tone from "tone";
-import ScoreComplex from "./ScoreComplex";
-import { generateSimpleScale } from "../../components/ScaleUtils/ScaleUtils";
+import ScoreComplex from "../../components/ScoreComplex/ScoreComplex";
+import { generateSimpleScale } from "./ScaleUtils";
 
 const ScaleExerciseSimples = () => {
   const [scale, setScale] = useState(generateSimpleScale());
