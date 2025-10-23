@@ -19,17 +19,17 @@ const Dashboard = () => {
         <ModuleCard
           title="Intervalos"
           image={module2img}
-          link="/exercise-hub" 
+          link="/exercise-hubIntervalos" 
         />
         <ModuleCard
           title="Escalas"
           image={module3img}
-          link="/exercise-hub" 
+          link="/exercise-hubScales" 
         />
         <ModuleCard
           title="Acordes"
           image={module4img}
-          link="/exercise-hub"
+          link="/exercise-hubChords"
         />
       </div>
     </div>

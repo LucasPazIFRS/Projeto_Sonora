@@ -23,6 +23,7 @@ import Chords from './pages/exercises/Chords';
 import ChordBuilder from './pages/exercises/ChordBuilder'
 import ExerciseHubChords from './pages/ExerciseHubChords';
 import ExerciseHubIntervalos from './pages/ExerciseHubIntervalos';
+import ExerciseHubScales from './pages/ExerciseHubScales';
 
 import NyanCatImage from './Assets/fotodogato.jpg'; 
 
@@ -66,6 +67,7 @@ function App() {
           <Route path="/exercises/notes2" element={<Notes2 />} />
           <Route path="/exercise-hubChords" element={<ExerciseHubChords />} />
           <Route path="/exercise-hubIntervalos" element={<ExerciseHubIntervalos />} />
+          <Route path="/exercise-hubScales" element={<ExerciseHubScales />} />
         </Routes>
       </div>
 
