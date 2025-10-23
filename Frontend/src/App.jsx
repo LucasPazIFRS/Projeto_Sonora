@@ -21,6 +21,8 @@ import GuessNoteExerciseAdv from './Exercises/GuessNoteExerciseAdv';
 import Intervals from './pages/exercises/Intervals';
 import Chords from './pages/exercises/Chords';
 import ChordBuilder from './pages/exercises/ChordBuilder'
+import ExerciseHubChords from './pages/ExerciseHubChords';
+import ExerciseHubIntervalos from './pages/ExerciseHubIntervalos';
 
 import NyanCatImage from './Assets/fotodogato.jpg'; 
 
@@ -62,6 +64,8 @@ function App() {
           <Route path="/exercises/chordbuilder" element={<ChordBuilder />} />
           <Route path="/exercises/guess-note" element={<GuessNoteExercise />} />
           <Route path="/exercises/notes2" element={<Notes2 />} />
+          <Route path="/exercise-hubChords" element={<ExerciseHubChords />} />
+          <Route path="/exercise-hubIntervalos" element={<ExerciseHubIntervalos />} />
         </Routes>
       </div>
 
